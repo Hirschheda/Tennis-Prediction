@@ -317,7 +317,8 @@ class TennisMatchPredictor:
     
     def plot_feature_importance(self, top_n: int = 15):
         """Plot feature importance."""
-        if not self.model_info.get('feature_importance'):
+        feature_importance = self.model_info.get('feature_importance')
+        if not feature_importance or len(feature_importance) == 0:
             print("No feature importance available")
             return
         
@@ -337,7 +338,8 @@ class TennisMatchPredictor:
     
     def plot_roc_curve(self):
         """Plot ROC curve."""
-        if not self.model_info.get('test_probabilities'):
+        test_probabilities = self.model_info.get('test_probabilities')
+        if test_probabilities is None or len(test_probabilities) == 0:
             print("No test probabilities available")
             return
         
