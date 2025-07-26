@@ -3,8 +3,8 @@ Elo rating system for tennis players.
 Builds and updates Elo ratings based on match outcomes.
 """
 
-import pandas as pd
-import numpy as np
+import pandas as pd  # type: ignore
+import numpy as np  # type: ignore
 from typing import Dict, Tuple, Optional
 from datetime import datetime
 
